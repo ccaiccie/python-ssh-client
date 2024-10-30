@@ -41,8 +41,8 @@ class SSHClient(QMainWindow):
 
     def start_connection(self):
         host = self.host_input.text()
-        username = self.username_input.text()
-        password = self.password_input.text()
+        username = self.username_input.text().strip()
+        password = self.password_input.text().strip()
 
         # Start a background thread for the SSH connection
         self.ssh_thread = SSHConnectionThread(host, username, password)
